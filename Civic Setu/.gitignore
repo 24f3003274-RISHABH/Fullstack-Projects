@@ -1,0 +1,12 @@
+# Environment
+.env
+.env.*
+drive-2b76e-firebase-adminsdk-fbsvc-f2df9fca48.json
+
+# Dependencies
+node_modules/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db

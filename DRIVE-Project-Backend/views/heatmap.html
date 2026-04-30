@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Heatmap</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-[#1B2A49] text-white p-4 text-center text-xl font-semibold">Civic Setu Jharkhand – Heatmap</header>
+  <main class="p-6">
+    <p class="mb-4">Red clusters indicate high density of unresolved civic issues.</p>
+    <div id="map" class="h-96 w-full border border-gray-300"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+  <script>
+    const map = L.map('map').setView([23.6102, 85.2799], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    const heat = L.heatLayer([
+      [23.6102, 85.2799, 0.8],
+      [23.6200, 85.2800, 0.6],
+      [23.6300, 85.2900, 0.9]
+    ], {radius: 25}).addTo(map);
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resolved Problems</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-[#1B2A49] text-white p-4 text-center text-xl font-semibold">Civic Setu Jharkhand – Resolved Problems</header>
+  <main class="p-6">
+    <p class="mb-4">Green clusters on the map indicate resolved civic issues:</p>
+    <div id="map" class="h-96 w-full border border-gray-300"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([23.6102, 85.2799], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Example resolved issue marker
+    L.circle([23.6102, 85.2799], {
+      color: 'green',
+      fillColor: '#0f0',
+      fillOpacity: 0.5,
+      radius: 500
+    }).addTo(map).bindPopup("Resolved: Drainage fixed");
+  </script>
+</body>
+</html>

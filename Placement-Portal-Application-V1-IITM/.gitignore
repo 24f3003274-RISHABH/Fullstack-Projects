@@ -1,15 +1,37 @@
-instance
-
-.vscode/
+# Python bytecode
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.db
-*.sqlite
-*.log
-*.env
-.DS_Store
+*.py[cod]
+*$py.class
+
+# Virtual environments
 venv/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Flask instance folder and SQLite DB
+instance/
+instance/*.sqlite3
+*.sqlite3
+*.db
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Other
 imp
 image.png
+

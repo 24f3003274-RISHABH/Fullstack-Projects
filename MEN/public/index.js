@@ -1,0 +1,1 @@
+alert('java sceipt file loaded')

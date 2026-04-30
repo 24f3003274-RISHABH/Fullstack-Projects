@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
@@ -40,9 +40,7 @@ pip-log.txt
 instance/
 instance/*.sqlite3
 *.sqlite3
-
-# Uploaded/static files
-
+*.db
 
 # Environment variables / secrets
 .env
@@ -66,9 +64,4 @@ Thumbs.db
 
 # Python version managers
 .python-version
-
-# Other
-__pycache__/
-.mypy_cache/
-.pytest_cache/
 

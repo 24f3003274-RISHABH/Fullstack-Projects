@@ -1,0 +1,14 @@
+npx nodemon app.js
+ npm i ejs
+
+ get - data goes from server to frontend
+ post - data goes frontend to backend 
+ by default form , hit the GET
+ npm run dev
+
+ id -mongoose pkg deta ha
+version-umber of update
+
+
+CRUD
+create read update delete
