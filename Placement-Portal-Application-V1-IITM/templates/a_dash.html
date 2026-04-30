@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/index.css">
+    <style>
+    /* Add black borders to all table cells */
+    .table th, 
+    .table td {
+      border: 1px solid #000 !important;
+    }
+
+    /* Dark header styling */
+    .table thead {
+      background-color: #343a40;
+      color: #fff;
+    }
+
+    /* Table title styling */
+    .table-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #0d6efd;
+    }
+  </style>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#"><h2 class="mb-0">Welcome {{admin.ad_name}} !</h2></a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto pushes links to the right -->
+          <li class="nav-item">
+            <a class="nav-link active" href="/update-drive-details">Edit Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/"> | Home Page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <!-- Table Name Section -->
+    <div class="table-title">Registered Companies</div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr.No.</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for company in companies %}
+        <tr>
+          <th scope="row">{{ company.c_id }}</th>
+          <td>{{ company.c_name }}</td>
+          <td>
+            <button type="button" class="btn btn-danger">BlackList</button>
+          </td>
+        </tr>
+        {% endfor %}
+       
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container my-5">
+    <!-- Table Name Section -->
+    <div class="table-title">Registered Students</div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr.No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+        <tr>
+          <th scope="row">{{student.s_id}}</th>
+          <td>{{student.s_name}}</td>
+          <td><button type="button" class="btn btn-danger">BlackList</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container my-5">
+    <!-- Table Name Section -->
+    <div class="table-title">Compnay Applications</div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr. No.</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for application in applications %}
+        <tr>
+          <th scope="row">{{application.a_id}}</th>
+          <td>{{ application.drive.company.c_name}}</td>
+          <td><button type="button" class="btn btn-success">mark as complete</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container my-5">
+    <!-- Table Name Section -->
+    <div class="table-title">Ongoing Drives</div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr. No.</th>
+          <th scope="col">Drive Name</th>
+          <th scope="col">Action</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for drive in drives %}
+        <tr>
+          <th scope="row">{{drive.p_id}}</th>
+          <td>{{drive.p_job_title}}</td>
+          <td><button type="button" class="btn btn-primary">view details</button></td>
+          <td><button type="button" class="btn btn-success">mark as complete</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container my-5">
+    <!-- Table Name Section -->
+    <div class="table-title">Student Applications</div>
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr. No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Drive</th>
+          <th scope="col">Company</th>
+          <th scope="col">Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in applications %}
+        <tr>
+          <th scope="row">{{app.a_id}}</th>
+          <td>{{ app.student.s_name}}</td>
+          <td>{{ app.drive.p_job_title}}</td>
+          <td>{{app.drive.company.c_name}}</td>
+          <td>{{app.a_applied_at.strftime('%d-%m-%Y')}}</td>
+          <td><button type="button" class="btn btn-primary">view</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <p>&copy; 2026 Placement Portal. All rights reserved.</p>
+</body>
+</html>

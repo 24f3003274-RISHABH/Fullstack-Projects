@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Drive</title>
+  <link rel="stylesheet" href="/static/index.css">
+    <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login-card {
+      max-width: 400px;          /* limit card width */
+      margin-top:0px;              /* center horizontally */
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background-color: #fff;
+    }
+    .login-card h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Create New Drive Page</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/login-page">Login</a></li>
+          </ul>
+        </div>
+        <li class="nav-item"><a class="nav-link" href="/">Back</a></li>
+      </div>
+    </nav>
+  </header>
+
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="login-card">
+      <h3>Fill The Details</h3>
+      <form method="POST" action="/create-drive">
+            
+            <div class="mb-3">
+              <label for="p_job_title" class="form-label">Job Title</label>
+              <input type="text" class="form-control" id="p_job_title" name="p_job_title" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="p_desc" class="form-label">Job Description</label>
+              <input type="text" class="form-control" id="p_desc" name="p_desc">
+            </div>
+            <div class="mb-3">
+              <label for="p_elig_criteria" class="form-label">Job Eligibility Criteria</label>
+              <input type="text" class="form-control" id="p_elig_criteria" name="p_elig_criteria">
+            </div>
+            <div class="mb-3">
+              <label for="p_min_cgpa" class="form-label">Min CGPA Required</label>
+              <input type="text" class="form-control" id="p_min_cgpa" name="p_min_cgpa">
+            </div>
+            <div class="mb-3">
+              <label for="p_package" class="form-label">Package</label>
+              <input type="text" class="form-control" id="p_package" name="p_package">
+            </div>
+            <div class="mb-3">
+              <label for="p_location" class="form-label">Location</label>
+              <input type="text" class="form-control" id="p_location" name="p_location">
+            </div>
+            <div class="mb-3">
+              <label for="p_app_deadline" class="form-label">Deadline</label>
+              <input type="text" class="form-control" id="p_app_deadline" name="p_app_deadline">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+  </div>
+</body>
+</html>
