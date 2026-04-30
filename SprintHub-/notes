@@ -1,0 +1,6 @@
+after server.js 
+npm init -y
+
+
+npm run dev 
+for running the programm
